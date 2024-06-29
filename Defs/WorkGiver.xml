@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <WorkGiverDef>
+    <defName>SeparateGenepack</defName>
+    <label>create genepacks</label>
+    <giverClass>GenepackReprocessor.WorkGiver_SeparateGenepack</giverClass>
+    <workType>Research</workType>
+    <verb>create genepacks</verb>
+    <gerund>creating genepacks at</gerund>
+    <priorityInType>115</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+  </WorkGiverDef>
+
+</Defs>

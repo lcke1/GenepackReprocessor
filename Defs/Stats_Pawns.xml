@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StatDef>
+    <defName>GenepackCreationSpeed</defName>
+    <label>genepack creation speed</label>
+    <description>A multiplier on the speed at which this person can make new genepacks.</description>
+    <category>PawnWork</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.05</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <statFactors>
+      <li>WorkSpeedGlobal</li>
+    </statFactors>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Intellectual</skill>
+        <baseValue>0.05</baseValue>
+        <bonusPerLevel>0.11875</bonusPerLevel>
+      </li>
+    </skillNeedFactors>
+    <capacityFactors>
+      <li>
+        <capacity>Manipulation</capacity>
+        <weight>1</weight>
+        <max>1.25</max>
+      </li>
+      <li>
+        <capacity>Sight</capacity>
+        <weight>0.3</weight>
+        <max>1.25</max>
+      </li>
+    </capacityFactors>
+    <scenarioRandomizable>true</scenarioRandomizable>
+    <displayPriorityInCategory>4750</displayPriorityInCategory>
+  </StatDef>
+  
+
+</Defs>

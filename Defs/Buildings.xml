@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>GeneSeparator</defName>
+    <label>genepack reprocessor</label>
+    <description>A workbench for creating new genepacks from existing genepacks banked nearby. Genepacks are not consumed in this process and can be reused.</description>
+    <researchPrerequisites>
+      <li>GeneProcessor</li>
+    </researchPrerequisites>
+    <altitudeLayer>Building</altitudeLayer>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <pathCost>42</pathCost>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <thingClass>GenepackReprocessor.Building_GeneSeparator</thingClass>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.4</fillPercent>
+    <graphicData>
+      <texPath>GeneSeparator</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+      <shadowData>
+        <volume>(2.55, 0.75, 1.7)</volume>
+      </shadowData>
+    </graphicData>
+    <descriptionHyperlinks>
+      <ThingDef>GeneBank</ThingDef>
+      <ThingDef>Genepack</ThingDef>
+    </descriptionHyperlinks>
+    <tickerType>Normal</tickerType>
+    <size>(3, 3)</size>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>600</MaxHitPoints>
+      <WorkToBuild>24000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0.5</Flammability>
+      <AssemblySpeedFactor>1.0</AssemblySpeedFactor>
+    </statBases>
+    <costList>
+      <Steel>200</Steel>
+      <Plasteel>50</Plasteel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+        <idlePowerDraw>25</idlePowerDraw>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>GeneBank</li>
+        </linkableFacilities>
+      </li>
+    </comps>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- Settings -->
+	<GeneR_GR>Genepack Reprocessor</GeneR_GR>
+	<GeneR_X>x</GeneR_X>
+	<GeneR_WorkMultiplier>Work Needed Multiplier: </GeneR_WorkMultiplier>
+	<GeneR_Logarithmic>Logarithmic</GeneR_Logarithmic>
+	<GeneR_LogarithmicHelp>Work per complexity decreases as complexity increases (Max work at 24C).</GeneR_LogarithmicHelp>
+	<GeneR_Linear>Linear</GeneR_Linear>
+	<GeneR_LinearHelp>Work is proportional to complexity (Max work at 24C).</GeneR_LinearHelp>
+	<GeneR_Exponential>Exponential</GeneR_Exponential>
+	<GeneR_ExponentialHelp>Work per complexity increases as complexity increases (Max work at 24C).</GeneR_ExponentialHelp>
+	<GeneR_ArchiteCapsulesSet>Needs Archite Capsules</GeneR_ArchiteCapsulesSet>
+	<GeneR_ArchiteCapsulesSetHelp>Should archite genes use capsules?</GeneR_ArchiteCapsulesSetHelp>
+	<GeneR_NeutroamineBase>Neutroamine Base Cost:</GeneR_NeutroamineBase>
+	<GeneR_NeutroamineBaseHelp>At least this much Neutroamine should be used per job.</GeneR_NeutroamineBaseHelp>
+	<GeneR_NeutroamineComp>Neutroamine Per Complexity:</GeneR_NeutroamineComp>
+	<GeneR_NeutroamineCompHelp>How much more Neutroamine should be added per gene complexity.</GeneR_NeutroamineCompHelp>
+	<GeneR_GenepackConsume>Consume Genepacks:</GeneR_GenepackConsume>
+	<GeneR_GenepackConsumeHelp>Should the genepacks being used be destroyed after the job completes?</GeneR_GenepackConsumeHelp>
+	<!-- Building Settings -->
+	<GeneR_Materials>Material Cost</GeneR_Materials>
+	<GeneR_MaterialsHelp>How much of each resource is needed to construct this building.</GeneR_MaterialsHelp>
+	<GeneR_MatComp>Components:</GeneR_MatComp>
+	<GeneR_MatCompHelp>The amount of components needed to construct the Reprocessor.</GeneR_MatCompHelp>
+	<GeneR_MatAdvComp>Adv Components:</GeneR_MatAdvComp>
+	<GeneR_MatAdvCompHelp>The amount of advanced components needed to construct the Reprocessor.</GeneR_MatAdvCompHelp>
+	<GeneR_MatSteel>Steel:</GeneR_MatSteel>
+	<GeneR_MatSteelHelp>The amount of steel needed to construct the Reprocessor.</GeneR_MatSteelHelp>
+	<GeneR_MatPlasteel>Plasteel:</GeneR_MatPlasteel>
+	<GeneR_MatPlasteelHelp>The amount of plasteel needed to construct the Reprocessor.</GeneR_MatPlasteelHelp>
+	<GeneR_MatGold>Gold:</GeneR_MatGold>
+	<GeneR_MatGoldHelp>The amount of gold needed to construct the Reprocessor.</GeneR_MatGoldHelp>
+	<GeneR_HP>Health Points:</GeneR_HP>
+	<GeneR_HPHelp>Health points of the building.</GeneR_HPHelp>
+	<GeneR_BuildWork>Work to Build:</GeneR_BuildWork>
+	<GeneR_BuildWorkHelp>The amount labor to construct the building.</GeneR_BuildWorkHelp>
+	<GeneR_Mass>Mass:</GeneR_Mass>
+	<GeneR_MassHelp>How heavy this building is. More mass makes transporting this difficult.</GeneR_MassHelp>
+	<GeneR_Flam>Flammability:</GeneR_Flam>
+	<GeneR_FlamHelp>How vulnerable this building is to fire damage. At 0, it will never burn.</GeneR_FlamHelp>
+	<GeneR_BuildSkill>Skill To Build:</GeneR_BuildSkill>
+	<GeneR_BuildSkillHelp>The minimal construction skill needed to build this.</GeneR_BuildSkillHelp>
+	<GeneR_Minify>Minify-able:</GeneR_Minify>
+	<GeneR_MinifyHelp>Can this building be uninstalled and reinstalled.</GeneR_MinifyHelp>
+	<!-- Split Settings -->
+	<GeneR_CanSeparate>Separate Task Enabled</GeneR_CanSeparate>
+	<GeneR_CanSeparateHelp>Can the Genepack Reprocessor separate genes?</GeneR_CanSeparateHelp>
+	<GeneR_SeparateMultiplierHelp>The multiplier for how long separating takes.</GeneR_SeparateMultiplierHelp>
+	<!-- Duplicate Settings -->
+	<GeneR_CanDuplicate>Duplicate Task Enabled</GeneR_CanDuplicate>
+	<GeneR_CanDuplicateHelp>Can the Genepack Reprocessor duplicate genes?</GeneR_CanDuplicateHelp>
+	<GeneR_DuplicateMultiplierHelp>The multiplier for how long duplicating takes.</GeneR_DuplicateMultiplierHelp>
+	<!-- Merge Settings -->
+	<GeneR_CanMerge>Merge Task Enabled</GeneR_CanMerge>
+	<GeneR_CanMergeHelp>Can the Genepack Reprocessor merge genes?</GeneR_CanMergeHelp>
+	<GeneR_MergeMultiplierHelp>The multiplier for how long merging takes.</GeneR_MergeMultiplierHelp>
+	<!-- Settings Set -->
+	<GeneR_SetsSaved>Building settings require restarting to update. Job settings applied for next job.</GeneR_SetsSaved>
+	<GeneR_SetDefault>Default Settings</GeneR_SetDefault>
+	<GeneR_SetDefaultHelp>Resets all settings to the mod's default.</GeneR_SetDefaultHelp>
+	<GeneR_SetDefaultMes>Default Settings applied.</GeneR_SetDefaultMes>
+	<GeneR_SetSimple>Simplified Settings</GeneR_SetSimple>
+	<GeneR_SetSimpleHelp>Settings for simple genepack splitting.</GeneR_SetSimpleHelp>
+	<GeneR_SetSimpleMes>Simplified Settings applied.</GeneR_SetSimpleMes>
+	<!-- Research Message -->
+	<GeneR_ResearchMes>About: Getting advanced components</GeneR_ResearchMes>
+	<GeneR_ResearchMesDes>You now have the technology to build a genepack reprocessor - but it also requires advanced components. You can collect advanced components several ways:\n\n  -All outlander settlements sell advanced components. Send a caravan to buy some.\n  -Some visiting traders sell advanced components. Invite or wait for them.\n  -Some quests are rewarded with advanced components.</GeneR_ResearchMesDes>
+	
+</LanguageData>

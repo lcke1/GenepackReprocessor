@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- Genepack Separating Building -->
+	<GeneR_GenepackMergeFinished>A new genepack has finished being merged.</GeneR_GenepackMergeFinished>
+	<GeneR_GenepackCloneFinished>A new genepack has finished being duplicated.</GeneR_GenepackCloneFinished>
+	<GeneR_GenepackSplitFinished>New genepacks have finished being separated.</GeneR_GenepackSplitFinished>
+
+	<GeneR_MessageGenepackCancelledMissingPack>Work on creating a new genepack at {0_labelShort} was cancelled: Missing required genepack.</GeneR_MessageGenepackCancelledMissingPack>
+  	<GeneR_MessageMergeCancelledMissingPack>Work on merging genepacks at {0_labelShort} was cancelled: Missing required genepack.</GeneR_MessageMergeCancelledMissingPack>
+
+	<GeneR_SeparateGenepack>Separate</GeneR_SeparateGenepack>
+	<GeneR_SeparateDesc>Create two smaller genepacks from an existing genepack in your gene library.</GeneR_SeparateDesc>
+	<GeneR_DublicGenepack>Duplicate</GeneR_DublicGenepack>
+	<GeneR_DublicDesc>Create a copy of a genepack in your gene library.</GeneR_DublicDesc>
+	<GeneR_MergeGenepack>Merge</GeneR_MergeGenepack>
+	<GeneR_MergeDesc>Create a larger genepack from multiple existing genepacks in your gene library.</GeneR_MergeDesc>
+
+	<GeneR_CancelGenepack>Cancel genepack</GeneR_CancelGenepack>
+	<GeneR_CancelGenepackDesc>Stop all work on creating new genepacks.</GeneR_CancelGenepackDesc>
+
+	<GeneR_MergeJob>Merging genepacks</GeneR_MergeJob>
+	<GeneR_SeparateJob>Separating genepacks</GeneR_SeparateJob>
+	<GeneR_CopyGenepack>Duplicating genepack</GeneR_CopyGenepack>
+
+	<GeneR_ComplexityPenalty>Complexity penalty</GeneR_ComplexityPenalty>
+	<GeneR_ArchitePenalty>Archite penalty</GeneR_ArchitePenalty>
+
+	<GeneR_NeutroamineRequired>Neutroamine required</GeneR_NeutroamineRequired>
+
+	<!-- Genepack Reprocessor Dialog -->
+	<GeneR_DuplicateGenes>Duplicate genepack</GeneR_DuplicateGenes>
+	<GeneR_IsolateGenes>Separate genes</GeneR_IsolateGenes>
+	<GeneR_MergeGenes>Merge genepacks</GeneR_MergeGenes>
+
+	<GeneR_AcceptGenes>Start processing</GeneR_AcceptGenes>
+	<GeneR_ConfirmGenepack>This will cancel the current job, start work on a new genepack?</GeneR_ConfirmGenepack>
+
+	<GeneR_GenepackDuration>Reprocessing duration</GeneR_GenepackDuration>
+	<GeneR_GenepackDurationDesc>Time need to create new genepacks.</GeneR_GenepackDurationDesc>
+
+	<GeneR_MessageSelectMoreGenepacks>Must select two or more genepacks to merge.</GeneR_MessageSelectMoreGenepacks>
+	<GeneR_MessageTooFewGenes>Must select a genepack with at least 2 genes to separate.</GeneR_MessageTooFewGenes>
+	<GeneR_MessageTooManyGenes>Can not create a merged genepack, total genes must be less than {0}.</GeneR_MessageTooManyGenes>
+
+</LanguageData>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>Anonemous2.GenepackReprocessor</packageId>
+  <name>Genepack Reprocessor</name>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <author>Anonemous2</author>
+  <description>Adds a new biotech building, the Genepack Reprocessor. Unlocked after gene processing, the reprocessor can split, duplicate, and merge genepacks.
+  \nYou can finally isolate archite genes, or specific genes out of larger packs.
+  \nCheck out the mod settings if you feel the genepack reprocessor is too strong/weak, or just want to simplify its functionality.
+  </description>
+</ModMetaData>

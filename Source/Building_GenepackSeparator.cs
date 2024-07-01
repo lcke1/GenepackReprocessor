@@ -736,6 +736,23 @@ public class Building_GeneSeparator : Building, IThingHolder
         Find.WindowStack.Add(new Dialog_MergeGenepack(this));
     }
 
+    private void DevFill()
+    {
+        if (NeutroamineRequiredNow > 0) { 
+            Thing neutro = ThingMaker.MakeThing(GeneSeparator_DefOfs.Neutroamine);
+            neutro.stackCount = NeutroamineRequiredNow;
+
+            innerContainer.TryAdd(neutro);
+        }
+        if (ArchitesRequiredNow > 0)
+        {
+            Thing archit = ThingMaker.MakeThing(ThingDefOf.ArchiteCapsule);
+            archit.stackCount = ArchitesRequiredNow;
+
+            innerContainer.TryAdd(archit);
+        }
+    }
+
     /* 
      Implement: I think this is the xenogerm inside
      public ThingOwner GetDirectlyHeldThings()
@@ -831,6 +848,13 @@ public class Building_GeneSeparator : Building, IThingHolder
 				command_Action3.defaultLabel = "DEV: Finish Genepack";
 				command_Action3.action = Finish;
 				yield return command_Action3;
+                if (NeutroamineRequiredNow > 0 || ArchitesRequiredNow > 0)
+                {
+                    Command_Action command_ActionFill = new Command_Action();
+                    command_ActionFill.defaultLabel = "DEV: Fill Resources";
+                    command_ActionFill.action = DevFill;
+                    yield return command_ActionFill;
+                }
             }
         }
 	}
@@ -899,6 +923,7 @@ public class Building_GeneSeparator : Building, IThingHolder
 	{
 		base.ExposeData();
         Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+        Scribe_Values.Look(ref workJob, "workJob", WorkJob.None);
         Scribe_References.Look(ref genepackToSeparate, "genepacksToSeparate");  // What happens if there's a merge op?
         Scribe_Collections.Look(ref genepacksToMerge, "genepacksToMerge", LookMode.Reference);
         Scribe_Values.Look(ref workingInt, "workingInt", defaultValue: false);

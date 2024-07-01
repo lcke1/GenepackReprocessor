@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Adds the genebanks from mod to the reprocessor -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Oops All Gene Banks</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="GeneSeparator"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+      <value>
+        <li>ThingGeneArchive</li>
+        <li>ThingGeneRegister</li>
+      </value>
+    </match>
+  </Operation>
+
+</Patch>

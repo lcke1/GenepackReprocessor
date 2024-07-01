@@ -4,7 +4,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>GeneSeparator</defName>
     <label>genepack reprocessor</label>
-    <description>A workbench for creating new genepacks from existing genepacks banked nearby. Genepacks are not consumed in this process and can be reused.</description>
+    <description>A workbench for creating new genepacks from existing packs banked nearby.</description>
     <researchPrerequisites>
       <li>GeneProcessor</li>
     </researchPrerequisites>

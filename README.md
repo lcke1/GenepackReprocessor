@@ -10,6 +10,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2024-07-01
+### Compatibility
+- "Gene Banks Expanded" patch added. https://steamcommunity.com/sharedfiles/filedetails/?id=3138968978
+
 ## [1.0.1] - 2024-07-01
 ### Fixes
 - Fixed job type changing to duplicate when saving and reloading.
@@ -21,7 +25,7 @@ All notable changes to this project will be documented in this file.
 - Added dev gizmo for filling needed resources in the reprocessor.
 
 ## [1.0.0] - 2024-06-28
-- Initial push
+Initial push
 
 ### Features
 - New building, the Genepack Reporcessor with the ability to

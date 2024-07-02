@@ -4,7 +4,7 @@
   <!-- Adds the genebanks from mod to the reprocessor -->
   <Operation Class="PatchOperationFindMod">
     <mods>
-      <li>Gene Banks Exapnded</li>
+      <li>Gene Banks Expanded</li>
     </mods>
     <match Class="PatchOperationAdd">
       <xpath>Defs/ThingDef[defName="GeneSeparator"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>

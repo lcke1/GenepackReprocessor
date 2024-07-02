@@ -10,6 +10,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2024-07-02
+### Fixes
+- "Gene Banks Expanded" patch added fixed. It stopped working, not sure when it got broke before pushing 1.0.2.
+
 ## [1.0.2] - 2024-07-01
 ### Compatibility
 - "Gene Banks Expanded" patch added. https://steamcommunity.com/sharedfiles/filedetails/?id=3138968978

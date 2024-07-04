@@ -27,7 +27,7 @@
     <castEdgeShadows>true</castEdgeShadows>
     <fillPercent>0.4</fillPercent>
     <graphicData>
-      <texPath>GeneSeparator</texPath>
+      <texPath>GeneSeparator/GeneSeparator</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(3, 3)</drawSize>
       <shadowData>

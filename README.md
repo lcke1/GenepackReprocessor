@@ -10,9 +10,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2024-07-04
+### Changes
+- Moved Textures into GeneSeparator folder. This is preemptive change to avoid any mod conflicts.
+
+### Compatibility
+- "ReSplice: Core" patch added. https://steamcommunity.com/sharedfiles/filedetails/?id=3236303965
+
 ## [1.0.3] - 2024-07-02
 ### Fixes
-- "Gene Banks Expanded" patch added fixed. It stopped working, not sure when it got broke before pushing 1.0.2.
+- "Gene Banks Expanded" patch fixed. It stopped working, not sure when it got broke before pushing 1.0.2.
 
 ## [1.0.2] - 2024-07-01
 ### Compatibility

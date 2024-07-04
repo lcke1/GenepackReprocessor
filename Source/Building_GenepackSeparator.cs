@@ -73,9 +73,9 @@ public class Building_GeneSeparator : Building, IThingHolder
     private static readonly Texture2D CancelIcon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel");
 
     // TODO: Create a custom icon for splitting genes
-    private static readonly CachedTexture SeparateIcon = new CachedTexture("Split");
-    private static readonly CachedTexture MergeIcon = new CachedTexture("Merge");
-    private static readonly CachedTexture DuplicateIcon = new CachedTexture("Duplicate");
+    private static readonly CachedTexture SeparateIcon = new CachedTexture("GeneSeparator/Split");
+    private static readonly CachedTexture MergeIcon = new CachedTexture("GeneSeparator/Merge");
+    private static readonly CachedTexture DuplicateIcon = new CachedTexture("GeneSeparator/Duplicate");
 
     // Getter methods
     public float ProgressPercent => workDone / totalWorkRequired;

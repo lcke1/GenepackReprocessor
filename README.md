@@ -1,7 +1,7 @@
 # GenepackReprocessor
 
 ## TODO 
-- Multiplayer compatablity
+- Multiplayer compatablity Settings Sync
 - 1.4 Support (Maybe)
 - Enhance mod settings (More features, better UI layout.)
 - Settings for archite penalty.
@@ -9,6 +9,10 @@
 
 # Changelog
 All notable changes to this project will be documented in this file.
+
+## [1.0.5] - 2024-07-07
+### Features
+- First iteration of multiplayer compatibility. May require manually syncing reprocessor mod settings.
 
 ## [1.0.4] - 2024-07-04
 ### Changes

@@ -4,9 +4,13 @@
  */
 using GenepackReprocessor.Properties;
 using RimWorld;
+using System;
 using UnityEngine;
 using Verse;
 using Verse.Noise;
+using HarmonyLib;
+using Multiplayer.API;
+
 using static GenepackReprocessor.GenepackReprocessorSettings;
 
 namespace GenepackReprocessor;
@@ -525,7 +529,7 @@ public class GenepackImprovMod : Mod
     /// <returns>The (translated) mod name.</returns>
     public override string SettingsCategory()
     {
-        return "GeneR_GR".Translate(); // TODO: add .Translate() to the string, and implement the lang
+        return "GeneR_GR".Translate();
     }
 }
 
@@ -541,7 +545,40 @@ public class GenepackReprocessor_OnDefsLoaded
     {
         // Apply settings to defs now that defs are loaded:
         ApplySettingsToDefs();
+
+        // Sticking MP compat here!
+        try
+        {
+            ((Action)(() =>
+            {
+                if (LoadedModManager.RunningModsListForReading.Any(x => x.Name == "Multiplayer"))
+                {
+                    // It's loading resources, must patch later.
+                    LongEventHandler.ExecuteWhenFinished(() =>
+                    {
+                        var type = AccessTools.TypeByName("GenepackReprocessor.Building_GeneSeparator");
+                        // Dialog separate
+                        MP.RegisterSyncMethod(type, "StartSplit");
+                        // Dialog duplicate
+                        MP.RegisterSyncMethod(type, "StartDuplicate");
+                        // Dialog merge
+                        MP.RegisterSyncMethod(type, "StartMerge");
+                        // Command finish, debug
+                        MP.RegisterSyncMethod(type, "Finish");
+                        // Command cancel
+                        MP.RegisterSyncMethod(type, "Reset");
+                        // Command fill, debug
+                        MP.RegisterSyncMethod(type, "DevFill");
+                    });
+                }
+            }))();
+        }
+        catch (TypeLoadException ex)
+        {
+            Log.Warning("Genepack multiplayer patch exception.");
+        }
     }
+
     public static void ApplySettingsToDefs()
     {
 

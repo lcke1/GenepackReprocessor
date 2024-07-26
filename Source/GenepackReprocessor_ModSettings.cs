@@ -44,6 +44,8 @@ public class GenepackReprocessorSettings : ModSettings
     public int  separateBaseNeutroamine         = 4;
     public int  separateComplexityNeutroamine   = 2;
     public bool separateNeedsArchites           = false;
+    // Auto job
+    // TODO: public bool separateForever = false; // Should the genepack reprocessor keep splitting genes?
 
     // Duplicate settings
     public CurveType dupli = CurveType.Linear;

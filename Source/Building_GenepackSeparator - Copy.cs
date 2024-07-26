@@ -41,6 +41,8 @@ public class Building_GeneSeparator : Building, IThingHolder
 		Merge = 2
 	}
     private bool doForever = false;     // If true, after splitting, it will see if there's more genes that can be isolated.
+    // Save previous task, so we don't repeat it before its genes are banked.
+    private List<GeneDef> justSplitGenes;
 
     private WorkJob workJob;
     private bool workingInt;
@@ -455,52 +457,53 @@ public class Building_GeneSeparator : Building, IThingHolder
                 }
             }
         }
-		if (workJob == WorkJob.Merge)
-		{
-			SoundDefOf.GeneAssembler_Complete.PlayOneShot(SoundInfo.InMap(this));
-			if (!genepacksToMerge.NullOrEmpty())
-			{
-				List<GeneDef> genesToAdd = new List<GeneDef>();
-				foreach (Genepack genep in genepacksToMerge)
-				{
-					foreach (GeneDef gened in genep.GeneSet.GenesListForReading)
-					{
-						genesToAdd.Add(gened);
-					}
-				}
+        if (workJob == WorkJob.Merge)
+        {
+            SoundDefOf.GeneAssembler_Complete.PlayOneShot(SoundInfo.InMap(this));
+            if (!genepacksToMerge.NullOrEmpty())
+            {
+                List<GeneDef> genesToAdd = new List<GeneDef>();
+                foreach (Genepack genep in genepacksToMerge)
+                {
+                    foreach (GeneDef gened in genep.GeneSet.GenesListForReading)
+                    {
+                        genesToAdd.Add(gened);
+                    }
+                }
 
-				Genepack genepack = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
+                Genepack genepack = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
 
-				// Randomly reorder the genes in the new merged pack
-				List<GeneDef> genesToAdd2 = new List<GeneDef>();
+                // Randomly reorder the genes in the new merged pack
+                List<GeneDef> genesToAdd2 = new List<GeneDef>();
 
-				int total = genesToAdd.Count;
+                int total = genesToAdd.Count;
 
-				for (int i = 0; i < total; i++)
-				{
-					int index = Rand.Range(0, genesToAdd.Count);
-					genesToAdd2.Add(genesToAdd[index]);
-					genesToAdd.RemoveAt(index);
-				}
+                for (int i = 0; i < total; i++)
+                {
+                    int index = Rand.Range(0, genesToAdd.Count);
+                    genesToAdd2.Add(genesToAdd[index]);
+                    genesToAdd.RemoveAt(index);
+                }
 
-				genepack.Initialize(genesToAdd2);
+                genepack.Initialize(genesToAdd2);
 
-				if (GenPlace.TryPlaceThing(genepack, InteractionCell, base.Map, ThingPlaceMode.Near))
-				{
-					Messages.Message("GeneR_GenepackMergeFinished".Translate(), genepack, MessageTypeDefOf.PositiveEvent);
-				}
+                if (GenPlace.TryPlaceThing(genepack, InteractionCell, base.Map, ThingPlaceMode.Near))
+                {
+                    Messages.Message("GeneR_GenepackMergeFinished".Translate(), genepack, MessageTypeDefOf.PositiveEvent);
+                }
 
                 // TODO Settings
                 // Lazy method, we could instead just search once, and destroy if the correct pack
-                if (Settings.consumeOnMerge) { 
-                    foreach (Genepack genep in genepacksToMerge) 
-                    { 
+                if (Settings.consumeOnMerge)
+                {
+                    foreach (Genepack genep in genepacksToMerge)
+                    {
                         DestroyGeneBankHoldingPack(genep);
                     }
                 }
             }
-		}
-		else if (workJob == WorkJob.Copy && genepackToSeparate != null)
+        }
+        else if (workJob == WorkJob.Copy && genepackToSeparate != null)
         {
             Genepack genepack = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
 
@@ -511,63 +514,59 @@ public class Building_GeneSeparator : Building, IThingHolder
                 Messages.Message("GeneR_GenepackCloneFinished".Translate(), genepack, MessageTypeDefOf.PositiveEvent);
             }
         }
-		else if (genepackToSeparate != null)
-		{
-			SoundDefOf.GeneAssembler_Complete.PlayOneShot(SoundInfo.InMap(this));
-			// TODO: Create new genepacks here. Might be only a shallow copy, so if there's errors
-			List<GeneDef> genesToAdd = new List<GeneDef>(genepackToSeparate.GeneSet.GenesListForReading);
-			List<GeneDef> genesToAdd2 = new List<GeneDef>();
+        else if (genepackToSeparate != null)
+        {
+            SoundDefOf.GeneAssembler_Complete.PlayOneShot(SoundInfo.InMap(this));
+            // TODO: Create new genepacks here. Might be only a shallow copy, so if there's errors
+            List<GeneDef> genesToAdd = new List<GeneDef>(genepackToSeparate.GeneSet.GenesListForReading);
+            List<GeneDef> genesToAdd2 = new List<GeneDef>();
 
-			Genepack genepack1 = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
+            Genepack genepack1 = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
 
-			// Check for a single gene, then just duplicate it.
+            // Check for a single gene, then just duplicate it.
             // NOTE: This code should never be accessable.
-			if (genesToAdd.Count == 1)
+            if (genesToAdd.Count == 1)
             {
-                Log.Warning("Genepack reprocessor: weird case of separating a 1 gene pack. Please report this as a bug and how you did it.");
+                Log.Warning("Genepack reprocessor: Weird case of separating a 1-gene pack. Please report this as a bug and how you did it.");
 
                 genepack1.Initialize(genesToAdd);
 
-				if (GenPlace.TryPlaceThing(genepack1, InteractionCell, base.Map, ThingPlaceMode.Near))
-				{
-					Messages.Message("GeneR_GenepackCloneFinished".Translate(), genepack1, MessageTypeDefOf.PositiveEvent);
-				}
-			}
-			else
-			{
-				// Randomly pull out half of the genes, and assign them to genesToAdd2
-				int half = genesToAdd.Count / 2;
+                if (GenPlace.TryPlaceThing(genepack1, InteractionCell, base.Map, ThingPlaceMode.Near))
+                {
+                    Messages.Message("GeneR_GenepackCloneFinished".Translate(), genepack1, MessageTypeDefOf.PositiveEvent);
+                }
+            }
+            else
+            {
+                // Randomly pull out half of the genes, and assign them to genesToAdd2
+                int half = genesToAdd.Count / 2;
 
-				for (int i = 0; i < half; i++)
-				{
-					int index = Rand.Range(0, genesToAdd.Count);
-					genesToAdd2.Add(genesToAdd[index]);
-					genesToAdd.RemoveAt(index);
-				}
+                for (int i = 0; i < half; i++)
+                {
+                    int index = Rand.Range(0, genesToAdd.Count);
+                    genesToAdd2.Add(genesToAdd[index]);
+                    genesToAdd.RemoveAt(index);
+                }
 
-				Genepack genepack2 = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
+                Genepack genepack2 = (Genepack)ThingMaker.MakeThing(ThingDefOf.Genepack);
 
-				genepack1.Initialize(genesToAdd);
-				genepack2.Initialize(genesToAdd2);
+                genepack1.Initialize(genesToAdd);
+                genepack2.Initialize(genesToAdd2);
 
-				if (GenPlace.TryPlaceThing(genepack1, InteractionCell, base.Map, ThingPlaceMode.Near) &&
-					GenPlace.TryPlaceThing(genepack2, InteractionCell, base.Map, ThingPlaceMode.Near))
-				{
-					Messages.Message("GeneR_GenepackSplitFinished".Translate(), genepack1, MessageTypeDefOf.PositiveEvent);
-				}
+                if (GenPlace.TryPlaceThing(genepack1, InteractionCell, base.Map, ThingPlaceMode.Near) &&
+                    GenPlace.TryPlaceThing(genepack2, InteractionCell, base.Map, ThingPlaceMode.Near))
+                {
+                    Messages.Message("GeneR_GenepackSplitFinished".Translate(), genepack1, MessageTypeDefOf.PositiveEvent);
+                }
 
                 // TODO: If settings are destroy, 
                 if (Settings.consumeOnSplit) { DestroyGeneBankHoldingPack(genepackToSeparate); }
 
-                // Lastly, check if we should queue another separate job.
-
-
-                // Lastly, check if we should queue another separate job.
-                if (doForever)
+                if (false)
                 {
                     // Make sure we don't repeat separating the last job, as the packs won't have been loaded into banks yet.
-                    List<GeneDef> justSplitGenes = new List<GeneDef>(genesToAdd);
-                    justSplitGenes.Concat(genesToAdd2);
+                    if (genesToAdd.Count == 1) { justSplitGenes.Concat(genesToAdd); }
+                    if (genesToAdd2.Count == 1) { justSplitGenes.Concat(genesToAdd2); }
 
 
                     // NOTE: This code is awful! But works. If there's a noticeable lag ingame I might comeback to optimize this mess.
@@ -636,16 +635,17 @@ public class Building_GeneSeparator : Building, IThingHolder
                     }
                 }
             }
-		}
+        }
         Reset();
-	}
+        Messages.Message("Finished Reseting. See error".Translate(), MessageTypeDefOf.PositiveEvent);
+    }
 
-                     
-   /* 
-    Implement: Returns the all genepacks that are valid given the flags below
-	public List<Genepack> GetGenepacks(bool includePowered, bool includeUnpowered)
-    */
-	public List<Genepack> GetGenepacks(bool includePowered, bool includeUnpowered)
+
+    /* 
+     Implement: Returns the all genepacks that are valid given the flags below
+     public List<Genepack> GetGenepacks(bool includePowered, bool includeUnpowered)
+     */
+    public List<Genepack> GetGenepacks(bool includePowered, bool includeUnpowered)
 	{
 		tmpGenepacks.Clear();
 		List<Thing> connectedFacilities = ConnectedFacilities;

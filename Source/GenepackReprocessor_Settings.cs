@@ -569,6 +569,8 @@ public class GenepackReprocessor_OnDefsLoaded
                         MP.RegisterSyncMethod(type, "Reset");
                         // Command fill, debug
                         MP.RegisterSyncMethod(type, "DevFill");
+
+                        // TODO: See if we can sync some of the settings as well.
                     });
                 }
             }))();

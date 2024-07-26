@@ -10,6 +10,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.6] - 2024-07-25
+### Features
+- Added a option to automatically add separating gene jobs, once a separate job is started.
+
 ## [1.0.5] - 2024-07-07
 ### Features
 - First iteration of multiplayer compatibility. May require manually syncing reprocessor mod settings.

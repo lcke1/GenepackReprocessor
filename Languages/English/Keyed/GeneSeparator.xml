@@ -42,4 +42,8 @@
 	<GeneR_MessageTooFewGenes>Must select a genepack with at least 2 genes to separate.</GeneR_MessageTooFewGenes>
 	<GeneR_MessageTooManyGenes>Can not create a merged genepack, total genes must be less than {0}.</GeneR_MessageTooManyGenes>
 
+	<!-- Repeat Separate -->
+	<GeneR_ToggleRepeat>Keep separating genes</GeneR_ToggleRepeat>
+	<GeneR_ToggleRepeatDesc>Should separate jobs keep being created until all unique genes have been isolated?</GeneR_ToggleRepeatDesc>
+
 </LanguageData>

@@ -10,6 +10,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] - 2024-07-25
+### Fixes
+- Fixed a few oversights with the automatic repeat feature (Saving, Multiplayer).
+
 ## [1.0.6] - 2024-07-25
 ### Features
 - Added a option to automatically add separating gene jobs, once a separate job is started.

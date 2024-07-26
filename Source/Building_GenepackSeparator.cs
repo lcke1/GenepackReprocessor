@@ -1021,6 +1021,7 @@ public class Building_GeneSeparator : Building, IThingHolder
 		Scribe_Values.Look(ref lastWorkedTick, "lastWorkedTick", -999);
         Scribe_Values.Look(ref architesRequired, "architesRequired", 0);
         Scribe_Values.Look(ref neutroamineRequired, "neutroamineRequired", 0);
+        Scribe_Values.Look(ref doForever, "doForever", false);
     }
 
     // TODO: Interface

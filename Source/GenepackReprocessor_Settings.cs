@@ -567,6 +567,8 @@ public class GenepackReprocessor_OnDefsLoaded
                         MP.RegisterSyncMethod(type, "Finish");
                         // Command cancel
                         MP.RegisterSyncMethod(type, "Reset");
+                        // Command repeat toggle, debug
+                        MP.RegisterSyncMethod(type, "Repeat");
                         // Command fill, debug
                         MP.RegisterSyncMethod(type, "DevFill");
 

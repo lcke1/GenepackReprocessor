@@ -10,6 +10,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+
+## [1.0.8] - 2024-08-31
+### Compatibility
+- "Gene Bank Plus" patch added. https://steamcommunity.com/sharedfiles/filedetails/?id=2889919154
+
 ## [1.0.7] - 2024-07-25
 ### Fixes
 - Fixed a few oversights with the automatic repeat feature (Saving, Multiplayer).

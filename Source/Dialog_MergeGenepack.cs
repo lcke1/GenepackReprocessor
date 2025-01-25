@@ -95,14 +95,14 @@ public class Dialog_MergeGenepack : GeneCreationDialogBase
             Messages.Message("GeneR_MessageTooManyGenes".Translate(mergeLimit + 1).CapitalizeFirst(), null, MessageTypeDefOf.RejectInput, historical: false);
             return false;
         }
-        foreach (GeneDef selectedGene in SelectedGenes)
-        {
-            if (selectedGene.prerequisite != null && !selectedGenes.Contains(selectedGene.prerequisite))
-            {
-                Messages.Message("MessageGeneMissingPrerequisite".Translate(selectedGene.label).CapitalizeFirst() + ": " + selectedGene.prerequisite.LabelCap, null, MessageTypeDefOf.RejectInput, historical: false);
-                return false;
-            }
-        }
+        // foreach (GeneDef selectedGene in SelectedGenes)
+        // {
+        //    if (selectedGene.prerequisite != null && !selectedGenes.Contains(selectedGene.prerequisite))
+        //    {
+        //        Messages.Message("MessageGeneMissingPrerequisite".Translate(selectedGene.label).CapitalizeFirst() + ": " + selectedGene.prerequisite.LabelCap, null, MessageTypeDefOf.RejectInput, historical: false);
+        //        return false;
+        //    }
+        // }
         if (selectedGenepacks.Count < 2)
         {
             Messages.Message("GeneR_MessageSelectMoreGenepacks".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);

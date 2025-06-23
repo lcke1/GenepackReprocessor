@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenepackReprocessor", "Source\GenepackReprocessor.csproj", "{52B0A1A6-2A15-49D7-A42C-95F12DF7737D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenepackReprocessor1.5", "Source\1.5\GenepackReprocessor1.5.csproj", "{52B0A1A6-2A15-49D7-A42C-95F12DF7737D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenepackReprocessor1.6", "Source\1.6\GenepackReprocessor1.6.csproj", "{F341F41A-FF2F-4B77-80BB-D818B3F31040}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{52B0A1A6-2A15-49D7-A42C-95F12DF7737D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B0A1A6-2A15-49D7-A42C-95F12DF7737D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B0A1A6-2A15-49D7-A42C-95F12DF7737D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F341F41A-FF2F-4B77-80BB-D818B3F31040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F341F41A-FF2F-4B77-80BB-D818B3F31040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F341F41A-FF2F-4B77-80BB-D818B3F31040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F341F41A-FF2F-4B77-80BB-D818B3F31040}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

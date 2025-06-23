@@ -10,6 +10,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.10] - 2025-06-23
+### Features
+- Added Rimworld version 1.6 support.
+
 ## [1.0.9] - 2025-01-25
 ### Fixes
 - Fixed gene operations requiring prerequisite gene be included.
